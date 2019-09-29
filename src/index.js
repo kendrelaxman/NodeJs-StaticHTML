@@ -19,7 +19,7 @@ http
       res.writeHead(200, { "Content-Type": "text/css" });
       fileStream.pipe(res);
     } else if (req.url.match(".img$")) {
-      var imagePath = path.join(__dirname, "public/img", req.url);
+      var imagePath = path.join(__dirname, "public", req.url);
       var fileStream = fs.createReadStream(imagePath);
       res.writeHead(200, { "Content-Type": "image/jpg" });
       fileStream.pipe(res);
